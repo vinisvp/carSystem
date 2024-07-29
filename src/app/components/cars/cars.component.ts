@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Car } from '../../Car';
 
 @Component({
   selector: 'app-cars',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './cars.component.css'
 })
 export class CarsComponent {
-
+  cars : Car[] = [
+    {
+      id: 1,
+      name: "Palio",
+      assembler: "Fiat",
+      price: 30000,
+      year: 2000
+    }
+  ];
 }

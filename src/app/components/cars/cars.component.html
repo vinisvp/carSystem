@@ -1,2 +1,29 @@
 <app-car></app-car>
-<p>cars works!</p>
+<div class="container bg-light">
+  <h2>Carros Cadastrados:</h2>
+  <table class="table table-light"> <!--TODO Make it responsive, just having name, price and options-->
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Montadora</th>
+        <th scope="col">Preço</th>
+        <th scope="col">Ano</th>
+        <th scope="col" class="text-end">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars">
+        <th scope="row">{{car.id}}</th>
+        <td>{{car.name}}</td>
+        <td>{{car.assembler}}</td>
+        <td>{{car.price}}</td>
+        <td>{{car.year}}</td>
+        <td class="text-end">
+          <button class="btn btn-success me-lg-1">Alterar</button>
+          <button class="btn btn-danger">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
