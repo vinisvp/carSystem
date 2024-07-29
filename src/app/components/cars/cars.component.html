@@ -1,4 +1,4 @@
-<app-car></app-car>
+<app-car [car]="car" (saveEmitter)="saveCar()"></app-car>
 <div class="container bg-light">
   <h2>Carros Cadastrados:</h2>
   <table class="table table-light"> <!--TODO Make it responsive, just having name, price and options-->

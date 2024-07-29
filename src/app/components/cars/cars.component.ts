@@ -7,6 +7,8 @@ import { Car } from '../../Car';
   styleUrl: './cars.component.css'
 })
 export class CarsComponent {
+  car : Car = {} as Car;
+
   cars : Car[] = [
     {
       id: 1,
@@ -16,4 +18,14 @@ export class CarsComponent {
       year: 2000
     }
   ];
+
+  idCount = this.cars[this.cars.length - 1].id + 1;
+
+  saveCar(){
+    this.car.id = this.idCount;
+    this.idCount++;
+
+    this.cars.push(this.car);
+    this.car = {} as Car;
+  }
 }
