@@ -17,10 +17,10 @@
         <th scope="row">{{car.id}}</th>
         <td>{{car.name}}</td>
         <td>{{car.assembler}}</td>
-        <td>{{car.price}}</td>
+        <td>{{car.price | currency : 'BRL'}}</td>
         <td>{{car.year}}</td>
         <td class="text-end">
-          <button class="btn btn-success me-lg-1">Alterar</button>
+          <button class="btn btn-success me-lg-1" (click)="editCar(car)">Alterar</button>
           <button class="btn btn-danger">Remover</button>
         </td>
       </tr>

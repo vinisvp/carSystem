@@ -7,9 +7,10 @@ import { Car } from '../../Car';
   styleUrl: './cars.component.css'
 })
 export class CarsComponent {
-  car : Car = {} as Car;
+  car: Car = {} as Car;
+  isEditing: boolean = false;
 
-  cars : Car[] = [
+  cars: Car[] = [
     {
       id: 1,
       name: "Palio",
@@ -21,11 +22,19 @@ export class CarsComponent {
 
   idCount = this.cars[this.cars.length - 1].id + 1;
 
-  saveCar(){
-    this.car.id = this.idCount;
-    this.idCount++;
+  saveCar() {
+    if (!this.isEditing) {
+      this.car.id = this.idCount;
+      this.idCount++;
+      this.cars.push(this.car);
+    }
 
-    this.cars.push(this.car);
+    this.isEditing = false;
     this.car = {} as Car;
+  }
+
+  editCar(car: Car) {
+    this.car = car;
+    this.isEditing = true;
   }
 }
