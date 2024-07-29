@@ -17,6 +17,20 @@ export class CarsComponent {
       assembler: "Fiat",
       price: 30000,
       year: 2000
+    },
+    {
+      id: 2,
+      name: "KA",
+      assembler: "Ford",
+      price: 15000,
+      year: 2001
+    },
+    {
+      id: 3,
+      name: "Celta",
+      assembler: "Chevrolet",
+      price: 7500,
+      year: 2011
     }
   ];
 
@@ -36,5 +50,9 @@ export class CarsComponent {
   editCar(car: Car) {
     this.car = car;
     this.isEditing = true;
+  }
+
+  removeCar(car : Car){
+    this.cars = this.cars.filter(c => c !== car);
   }
 }

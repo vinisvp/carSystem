@@ -1,27 +1,27 @@
 <app-car [car]="car" (saveEmitter)="saveCar()"></app-car>
 <div class="container bg-light">
   <h2>Carros Cadastrados:</h2>
-  <table class="table table-light"> <!--TODO Make it responsive, just having name, price and options-->
+  <table class="table table-light">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col" class="d-none d-md-table-cell">#</th>
         <th scope="col">Nome</th>
-        <th scope="col">Montadora</th>
+        <th scope="col" class="d-none d-md-table-cell">Montadora</th>
         <th scope="col">Preço</th>
-        <th scope="col">Ano</th>
+        <th scope="col" class="d-none d-md-table-cell">Ano</th>
         <th scope="col" class="text-end">Opções</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let car of cars">
-        <th scope="row">{{car.id}}</th>
+        <th scope="row"  class="d-none d-md-table-cell">{{car.id}}</th>
         <td>{{car.name}}</td>
-        <td>{{car.assembler}}</td>
+        <td class="d-none d-md-table-cell">{{car.assembler}}</td>
         <td>{{car.price | currency : 'BRL'}}</td>
-        <td>{{car.year}}</td>
+        <td class="d-none d-md-table-cell">{{car.year}}</td>
         <td class="text-end">
           <button class="btn btn-success me-lg-1" (click)="editCar(car)">Alterar</button>
-          <button class="btn btn-danger">Remover</button>
+          <button class="btn btn-danger" (click)="removeCar(car)">Remover</button>
         </td>
       </tr>
     </tbody>
